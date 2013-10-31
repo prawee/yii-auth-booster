@@ -57,18 +57,16 @@ $this->breadcrumbs = array(
             <?php $form = $this->beginWidget(
                 'bootstrap.widgets.TbActiveForm',
                 array(
-                    'layout' => TbHtml::FORM_LAYOUT_INLINE,
+                    'type' => 'inline',
                 )
             ); ?>
 
             <?php echo $form->dropDownList($formModel, 'items', $assignmentOptions, array('label' => false)); ?>
 
-            <?php echo TbHtml::submitButton(
-                Yii::t('AuthModule.main', 'Assign'),
-                array(
-                    'color' => TbHtml::BUTTON_COLOR_PRIMARY,
-                )
-            ); ?>
+            <?php $this->widget('bootstrap.widgets.TbButton', array(
+                    'buttonType' => 'submit',
+                    'label' => Yii::t('AuthModule.main', 'Assign'),
+                )); ?>
 
             <?php $this->endWidget(); ?>
 

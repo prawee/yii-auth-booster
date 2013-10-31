@@ -1,4 +1,4 @@
-yii-auth
+yii-auth-booster
 ========
 
 Auth is a module for the [Yii PHP framework](http://www.yiiframework.com) that provides a web user interface for Yii's built-in authorization manager (CAuthManager). 
@@ -116,4 +116,4 @@ Translations should be placed in the messages folder under a folder named accord
 
 ### Note
 
-Note: Version 1.0.6-wip use and require yiistrap!! yiistrap is next generation yii-bootsrap
+Note: This form use and require YiiBooster instead yiistrap :)

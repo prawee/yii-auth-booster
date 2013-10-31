@@ -19,12 +19,12 @@ $this->breadcrumbs = array(
 <?php $form = $this->beginWidget(
     'bootstrap.widgets.TbActiveForm',
     array(
-        'layout' => TbHtml::FORM_LAYOUT_HORIZONTAL,
+        'type'=>'horizontal',
     )
 ); ?>
 
 <?php echo $form->hiddenField($model, 'type'); ?>
-<?php echo $form->textFieldControlGroup(
+<?php echo $form->textFieldRow(
     $model,
     'name',
     array(
@@ -32,22 +32,21 @@ $this->breadcrumbs = array(
         'title' => Yii::t('AuthModule.main', 'System name cannot be changed after creation.'),
     )
 ); ?>
-<?php echo $form->textFieldControlGroup($model, 'description'); ?>
+<?php echo $form->textFieldRow($model, 'description'); ?>
 
     <div class="form-actions">
-        <?php echo TbHtml::submitButton(
-            Yii::t('AuthModule.main', 'Save'),
+        <?php $this->widget('bootstrap.widgets.TbButton',
             array(
-                'color' => TbHtml::BUTTON_COLOR_PRIMARY,
-            )
-        ); ?>
-        <?php echo TbHtml::linkButton(
-            Yii::t('AuthModule.main', 'Cancel'),
+                'buttonType' => 'submit',
+                'type' => 'primary',
+                'label' => Yii::t('AuthModule.main', 'Save'),
+            )); ?>
+        <?php $this->widget('bootstrap.widgets.TbButton',
             array(
-                'color' => TbHtml::BUTTON_COLOR_LINK,
+                'type' => 'link',
+                'label' => Yii::t('AuthModule.main', 'Cancel'),
                 'url' => array('view', 'name' => $item->name),
-            )
-        ); ?>
+            )); ?>
     </div>
 
 <?php $this->endWidget(); ?>

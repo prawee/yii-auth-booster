@@ -14,28 +14,25 @@ $this->breadcrumbs = array(
 <?php $form = $this->beginWidget(
     'bootstrap.widgets.TbActiveForm',
     array(
-        'layout' => TbHtml::FORM_LAYOUT_HORIZONTAL,
+        'type'=>'horizontal',
     )
 ); ?>
 
 <?php echo $form->hiddenField($model, 'type'); ?>
-<?php echo $form->textFieldControlGroup($model, 'name'); ?>
-<?php echo $form->textFieldControlGroup($model, 'description'); ?>
+<?php echo $form->textFieldRow($model, 'name'); ?>
+<?php echo $form->textFieldRow($model, 'description'); ?>
 
     <div class="form-actions">
-        <?php echo TbHtml::submitButton(
-            Yii::t('AuthModule.main', 'Create'),
-            array(
-                'color' => TbHtml::BUTTON_COLOR_PRIMARY,
-            )
-        ); ?>
-        <?php echo TbHtml::linkButton(
-            Yii::t('AuthModule.main', 'Cancel'),
-            array(
-                'color' => TbHtml::BUTTON_COLOR_LINK,
+        <?php $this->widget('bootstrap.widgets.TbButton', array(
+                'buttonType' => 'submit',
+                'type' => 'primary',
+                'label' => Yii::t('AuthModule.main', 'Create'),
+            )); ?>
+        <?php $this->widget('TbButton', array(
+                'type' => 'link',
+                'label' => Yii::t('AuthModule.main', 'Cancel'),
                 'url' => array('index'),
-            )
-        ); ?>
+            )); ?>
     </div>
 
 <?php $this->endWidget(); ?>

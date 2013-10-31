@@ -7,7 +7,7 @@
     <?php $this->widget(
         'bootstrap.widgets.TbNav',
         array(
-            'type' => TbHtml::NAV_TYPE_TABS,
+            'type' => 'tabs',
             'items' => array(
                 array(
                     'label' => Yii::t('AuthModule.main', 'Assignments'),

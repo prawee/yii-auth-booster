@@ -9,13 +9,11 @@ $this->breadcrumbs = array(
 
 <h1><?php echo $this->capitalize($this->getTypeText(true)); ?></h1>
 
-<?php echo TbHtml::linkButton(
-    Yii::t('AuthModule.main', 'Add {type}', array('{type}' => $this->getTypeText())),
-    array(
-        'color' => TbHtml::BUTTON_COLOR_PRIMARY,
+<?php $this->widget('bootstrap.widgets.TbButton', array(
+        'type' => 'primary',
+        'label' => Yii::t('AuthModule.main', 'Add {type}', array('{type}' => $this->getTypeText())),
         'url' => array('create'),
-    )
-); ?>
+    )); ?>
 
 <?php $this->widget(
     'bootstrap.widgets.TbGridView',
